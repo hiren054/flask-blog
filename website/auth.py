@@ -16,22 +16,15 @@ def signup():
         password2 = request.form.get('password2')
         user = User.query.filter_by(email=email).first()
         error = None
-
+        
         if user :
             error = f"User {user.email.capitalize()} is already Registered."
         elif not name :
             error = 'Name is Required.'
         elif not email :
             error = "Email is Required."
-        elif len(email) < 4 :
-            error = "Email must be greater than 4 characters."
-        elif len(password1) < 5 :
-            error = "Password must be greater than 5 characters."
-        elif not password1 :
-            error = "Passsword is Required."
         elif password1 != password2 :
             error = "Password does not match."
-        
         
         if error is None:
             new_user = User(email=email,name=name,
@@ -41,21 +34,16 @@ def signup():
             db.session.add(new_user)
             db.session.commit()
             return redirect(url_for('auth.login'))
-
         flash(error)
-    
     return render_template("auth/signup.html", user=current_user)
 
 @auth.route('/login', methods = ['GET','POST']) 
 def login():
-    if current_user.is_authenticated :
-        return redirect(url_for('views.home'))
     if request.method == 'POST' :
         email = request.form.get('email')
         password = request.form.get('password')
         user = User.query.filter_by(email=email).first()
         error = None
-
 
         if user is None :
             error = "Incorrect Email"

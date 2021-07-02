@@ -9,7 +9,7 @@ views = Blueprint('views', __name__)
 
 @views.route('/')
 def home():
-    posts = Post.query.order_by(Post.created.desc())
+    posts = Post.query.order_by(Post.id.desc()).all()
     return render_template('home.html',posts = posts,user=current_user)
 
 @views.route('/new', methods=['GET','POST'])
