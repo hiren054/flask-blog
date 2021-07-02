@@ -19,10 +19,12 @@ def create_app():
     #importing both blueprint from auth and views.py files
     from .views import views
     from .auth import auth
+    from .errors import errors
 
     #registering blueprint
     app.register_blueprint(views,url_prefix='/')
     app.register_blueprint(auth,url_prefix='/')
+    app.register_blueprint(errors,url_prefix='/')
 
     from .models import User, Post
 

@@ -9,9 +9,8 @@ views = Blueprint('views', __name__)
 
 @views.route('/')
 def home():
-    posts = Post.query.all()
+    posts = Post.query.order_by(Post.created.desc())
     return render_template('home.html',posts = posts,user=current_user)
-
 
 @views.route('/new', methods=['GET','POST'])
 @login_required 
@@ -36,7 +35,7 @@ def create():
             error = "Your Post has been created!!"
             flash(error)
             return redirect(url_for('views.home'))
-    return render_template('create.html', user=current_user)
+    return render_template('blog/create.html', user=current_user)
 
 
 
@@ -55,7 +54,7 @@ def update_post(id):
             db.session.commit()
             flash(error)
             return redirect(url_for('views.home'))
-    return render_template('update.html', post=post, user=current_user)
+    return render_template('blog/update.html', post=post, user=current_user)
 
 
 @views.route('/delete/<int:id>', methods= ['GET','POST'])

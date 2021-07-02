@@ -44,7 +44,7 @@ def signup():
 
         flash(error)
     
-    return render_template("signup.html", user=current_user)
+    return render_template("auth/signup.html", user=current_user)
 
 @auth.route('/login', methods = ['GET','POST']) 
 def login():
@@ -70,22 +70,7 @@ def login():
 
         flash(error)
 
-    return render_template("login.html", user=current_user)
-
-
-    #     user = User.query.filter_by(email=email).first()
-    #     # print(user.id)
-    #     if user :
-    #         #checking the login form data and check with the database
-    #         if check_password_hash(user.password, password) :
-    #             print("login successfull")
-    #             login_user(user, remember=False)
-    #             return redirect(url_for('views.home'))
-    #         else :
-    #             print("incorrect password")
-    #     else:
-    #         print("email does not exist!")
-    # return render_template("login.html", user=current_user)
+    return render_template("auth/login.html", user=current_user)
 
 
 @auth.route('/logout')
