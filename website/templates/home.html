@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block header %}
+<h1 style="text-align: center;">{% block title %}Posts{% endblock %}</h1>
+{% endblock %}
+
+
+
+{% block content %}
+{% for post in posts %}
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      {% if post.author == current_user %}
+        <a class="button" href="{{ url_for('views.update_post', id=post.id) }}">Edit</a>
+        <a class="button" href="{{ url_for('views.delete_post', id=post.id) }}">Delete</a>
+      {% endif %}
+      <h2>{{ post.title.capitalize() }}</h2>
+      <p>Created by {{ post.author.name.capitalize() }} on {{ post.created.strftime('%d-%m-%Y') }}</p>
+      <h4>{{ post.content}}</h4>
+    </div>
+  </div>
+  </div><br>
+
+{% endfor %}
+
+  <!-- <div class="leftcolumn">
+    <div class="card">
+      <h2>About Me</h2>
+      <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+    </div>
+    <div class="card">
+      <h3>Follow Me</h3>
+      <p>Some text..</p>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="footer">
+  <a href="https://in.linkedin.com/in/hiren-rathod-1b20991b6" class="fa fa-linkedin" target="blank"></a>
+  <a href="https://github.com/hiren054" class="fa fa-github" target="blank"></a>
+  <p>&copy Hiren Rathod | All Rights Reserved | 2021</p>
+</div>
+{% endblock %}
+
+
+
+
+
+
+<!-- {% for post in posts %}
+<div class="header">
+  <h1>{{ post.title.capitalize() }}</h1>
+  <div class="about">
+   <p>by {{ post.author.name.capitalize() }} on {{ post.created.strftime('%d-%m-%Y') }}</p>
+  </div>
+  <p class="body">{{ post.content}}</p>
+</div>
+{% endfor %} -->
