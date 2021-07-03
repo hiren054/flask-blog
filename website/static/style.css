@@ -257,3 +257,9 @@ a {
     padding: 10px;
     text-decoration: underline;
   }
+
+  .error{
+    padding: 15px;
+    text-align: center;
+    background-color: #ccc;;
+  }

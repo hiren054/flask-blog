@@ -8,7 +8,7 @@ from website import db
 views = Blueprint('views', __name__)
 
 @views.route('/')
-def home():
+def home(): 
     posts = Post.query.order_by(Post.id.desc()).all()
     return render_template('home.html',posts = posts,user=current_user)
 
@@ -16,7 +16,7 @@ def home():
 def post(id):
 
     post = Post.query.get_or_404(id)
-    return render_template('blog/post.html', post=post)
+    return render_template('blog/post.html', post=post,user=current_user)
 
 
 @views.route('/new', methods=['GET','POST'])

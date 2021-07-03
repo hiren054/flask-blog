@@ -17,7 +17,7 @@
     <ul>
       {% if current_user.is_authenticated %}
       <li>
-        <h1 style="color: #ffffff;">{{ user.name.capitalize() }}</h1>
+        <h1 style="color: #ffffff;">Welcome {{ user.name.capitalize() }}</h1>
       </li>
       <li>
         <a href="{{ url_for('views.create') }}">New post</a>
