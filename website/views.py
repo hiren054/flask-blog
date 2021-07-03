@@ -1,4 +1,4 @@
-from flask import Blueprint,render_template,request,redirect,url_for,flash, abort
+from flask import Blueprint, render_template, request, redirect, url_for, flash, abort
 from flask_login import current_user
 from flask_login import login_required
 from .models import Post
@@ -70,8 +70,6 @@ def delete_post(id):
         error = "post deleted!"
         flash(error)
         return redirect(url_for('views.home'))
-
-
     
 
 
