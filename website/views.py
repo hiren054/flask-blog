@@ -12,6 +12,13 @@ def home():
     posts = Post.query.order_by(Post.id.desc()).all()
     return render_template('home.html',posts = posts,user=current_user)
 
+@views.route('/post/<int:id>')
+def post(id):
+
+    post = Post.query.get_or_404(id)
+    return render_template('blog/post.html', post=post)
+
+
 @views.route('/new', methods=['GET','POST'])
 @login_required 
 def create():
@@ -70,6 +77,8 @@ def delete_post(id):
         error = "post deleted!"
         flash(error)
         return redirect(url_for('views.home'))
+
+
     
 
 

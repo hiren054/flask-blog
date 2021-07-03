@@ -23,7 +23,11 @@ hr {
 
 a {
     text-decoration: none;
-    color: #377ba8;
+    color: #000000;
+  }
+
+  a:hover {
+    color: #007bb5;
   }
   
   .navbar {
@@ -84,9 +88,8 @@ a {
     font-size: larger;
     color: #ff0000;
     padding: 5px;
-    margin: 10px;
     text-align:center;
-    background-color: #c8ffd4;
+    background-color: #f5fff7;
     border: 1px solid #000000;
     width: fit-content;
     width: 75%;

@@ -18,7 +18,7 @@ def signup():
         error = None
         
         if user :
-            error = f"User {user.email.capitalize()} is already Registered."
+            error = f"User {user.email} is already Registered."
         elif not name :
             error = 'Name is Required.'
         elif not email :

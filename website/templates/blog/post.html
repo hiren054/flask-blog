@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block header %}
+<h1 style="text-align: center; width:75%; margin-left: 10%;">
+  {% block title %}Posts{% endblock %}
+</h1>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>{{ post.title.capitalize() }}</h2>
+      <p>Created by {{ post.author.name.capitalize() }} on {{ post.created.strftime('%d-%m-%Y') }}</p>
+      <h4>{{ post.content}}</h4>
+    </div>
+  </div>
+</div><br>
+{% endblock %}

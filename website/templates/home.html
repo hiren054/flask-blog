@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 
 {% block header %}
-<h1 style="text-align: center; width:75%; margin-left: 10%;">{% block title %}Posts{% endblock %}</h1>
+<h1 style="text-align: center; width:75%; margin-left: 10%;">
+  {% block title %}Posts{% endblock %}
+</h1>
 {% endblock %}
-
 
 
 {% block content %}
@@ -12,15 +13,15 @@
   <div class="leftcolumn">
     <div class="card">
       {% if post.author == current_user %}
-        <a class="button" href="{{ url_for('views.update_post', id=post.id) }}">Edit</a>
-        <a class="delete-button" href="{{ url_for('views.delete_post', id=post.id) }}">Delete</a>
+      <a class="button" href="{{ url_for('views.update_post', id=post.id) }}">Edit</a>
+      <a class="delete-button" href="{{ url_for('views.delete_post', id=post.id) }}">Delete</a>
       {% endif %}
-      <h2>{{ post.title.capitalize() }}</h2>
+      <a href="{{ url_for('views.post', id=post.id) }}"><h2>{{ post.title.capitalize() }}</h2></a>
       <p>Created by {{ post.author.name.capitalize() }} on {{ post.created.strftime('%d-%m-%Y') }}</p>
       <h4>{{ post.content}}</h4>
     </div>
   </div>
-  </div><br>
+</div><br>
 
 {% endfor %}
 
