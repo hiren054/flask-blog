@@ -1,7 +1,7 @@
 from website import create_app
 import os
 
-PORT = os.environ['PORT']
+PORT = os.environ['PORT'] if os.environ['PORT'] is not None else 5000
 
 app = create_app()
 
