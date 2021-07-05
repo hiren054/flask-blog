@@ -80,12 +80,3 @@ def delete_post(id):
         error = "post deleted!"
         flash(error)
         return redirect(url_for('views.home'))
-
-
-    
-
-
-
-
-
-
