@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 
+{% block title %} Update {% endblock %}
+
 {% block header %}
-<h1>{% block title %}{{post.author.name.capitalize()}} Update your {{post.title}} {% endblock %}</h1>
+<h1>{{post.author.name.capitalize()}} Update your Post</h1>
 {% endblock %}
 
 {% block content %}

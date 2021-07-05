@@ -24,10 +24,11 @@ hr {
 a {
     text-decoration: none;
     color: #000000;
+    transition: background-color .5s;
   }
 
   a:hover {
-    color: #007bb5;
+    color: #34767c;
   }
   
   .navbar {
@@ -38,6 +39,10 @@ a {
   
   .navbar a {
     color: #e7e7e7;
+  }
+
+  .brand {
+    color: #ffffff;
   }
   
   .navbar .brand {
@@ -57,7 +62,7 @@ a {
   
   .navbar ul li a {
     color: #e7e7e7;
-    padding: 24px;
+    padding: 25px;
     display: block;
   }
   
@@ -108,7 +113,7 @@ a {
   }
 
   .delete-button:hover {
-    background-color: red;
+    background-color: #9b0f0f;
   }
 
   .button {
@@ -121,17 +126,39 @@ a {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    text-align: center;
   }
 
   .button:hover{
     background-color: black;
   }
 
+  .page{
+    align-items: center;
+    width: fit-content;
+    margin-left: 10%;
+    background-color: #ffffff;
+  }
+
+  .page-button {
+    background-color: #4e4e4e;
+    border: none;
+    color: #ffffff;
+    padding: 4px 8px;
+    margin: 3px;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  .page-button:hover{
+    background-color: black;
+  }
 
   div {
     border-radius: 5px;
     padding: 10px;
   } 
+  
 
   .fa {
     padding: 3px;
@@ -196,11 +223,11 @@ a {
   }
 
   .leftcolumn {   
-    text-align: center;
+    /* text-align: center; */
     float: left;
     width: 75%;
     margin-left: 10%;
-    border: 1px solid black;
+    border: 1px solid rgb(0, 0, 0);
     padding: 5px;
     padding-top: 1px;
     padding-left: 5px;
@@ -209,7 +236,7 @@ a {
   
   .card  {
     background-color: white;
-    padding: 10px;
+    padding: 5px;
     margin-top: 5px;
     margin-right: 10px;
   }
@@ -217,8 +244,8 @@ a {
   .card h2 {
     padding: 10px;
     margin: 5px;
-    background-color: #ffffff;
-    text-decoration: underline;
+    width: fit-content;
+    transition: .5S;
   }
 
 
@@ -228,16 +255,16 @@ a {
   }
 
   .card h4 {
-    background-color: #ebebeb;
-    padding-left: 25px;
-    padding-bottom: 50px;
+    background-color: #f0f5f7;
+    padding-left: 20px;
+    padding-bottom: 10px;
     padding-top: 10px;
-    padding: auto;  
     width: auto;
     border-radius: 10px;
     margin-bottom: 5px;
     margin-left: 5px;
     margin-top: 5px ;
+    display: block;
   }
 
   .row:after {
@@ -260,6 +287,26 @@ a {
 
   .error{
     padding: 15px;
+    margin: 0 auto;
     text-align: center;
-    background-color: #ccc;;
+    background-color: #fafafa;;
+    width: fit-content;
+  }
+
+  .content{
+    color: #000000;
+    text-transform: initial;
+  }
+
+  .arrow {
+    border: 2px solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 8px;
+    margin-left: 5%;
+  }
+
+  .left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
   }

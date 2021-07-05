@@ -7,11 +7,17 @@
 {% endblock %}
 
 {% block content %}
+<!-- <a href="{{ url_for('views.home') }}">
+  <img src="{{ url_for('static', filename='/BAK.png') }}" alt="BAK">
+</a> -->
+<a href="{{ url_for('views.home', page=page_num) }}">
+  <p><i class="arrow left"></i>Back</p>
+</a>
 <div class="row">
   <div class="leftcolumn">
     <div class="card">
       <h2>{{ post.title.capitalize() }}</h2>
-      <p>Created by {{ post.author.name.capitalize() }} on {{ post.created.strftime('%d-%m-%Y') }}</p>
+      <p>Created by <strong>@{{ post.author.name.capitalize() }}</strong> on {{ post.created.strftime('%d-%m-%Y') }}</p>
       <h4>{{ post.content}}</h4>
     </div>
   </div>

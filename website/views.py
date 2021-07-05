@@ -8,13 +8,14 @@ from website import db
 views = Blueprint('views', __name__)
 
 @views.route('/')
+@views.route('/home')
 def home(): 
-    posts = Post.query.order_by(Post.id.desc()).all()
+    page = request.args.get('page', 1,type=int)
+    posts = Post.query.order_by(Post.created.desc()).paginate(page=page, per_page=2)
     return render_template('home.html',posts = posts,user=current_user)
 
 @views.route('/post/<int:id>')
 def post(id):
-
     post = Post.query.get_or_404(id)
     return render_template('blog/post.html', post=post,user=current_user)
 
@@ -46,7 +47,7 @@ def create():
 
 
 
-@views.route('/update/<int:id>', methods= ['GET','POST'])
+@views.route('/post/<int:id>/update', methods= ['GET','POST'])
 @login_required
 def update_post(id):
     error = None
