@@ -13,7 +13,7 @@ class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable= False)
     content = db.Column(db.String(5000), nullable= False)
-    created = db.Column(db.DateTime, default=datetime.now(), nullable=False)
+    created = db.Column(db.DateTime, default=datetime.now())
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable= False)  
 
 
