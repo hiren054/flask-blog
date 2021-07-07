@@ -11,4 +11,13 @@ Windows Command Prompt
 ----------------------
 set FLASK_APP=website
 set FLASK_ENV=development
+flask run
+```
+
+```
+Git bash
+-----------------
+export FLASK_APP=website
+export FLASK_ENV=devlopment
+flask run
 ```
