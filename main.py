@@ -1,4 +1,3 @@
-from os import truncate
 from website import create_app
 # import os
 
