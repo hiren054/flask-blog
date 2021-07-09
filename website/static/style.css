@@ -175,7 +175,6 @@ a {
       opacity: 0.5;
   }
   
-
   .fa-github {
     background: black;
     color: white;
@@ -247,7 +246,6 @@ a {
     width: fit-content;
     transition: .2S;
   }
-
 
   .card p {
     margin-bottom: 10px;
